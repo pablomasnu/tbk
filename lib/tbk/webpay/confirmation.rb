@@ -21,7 +21,6 @@ module TBK
 
       def initialize(options)
         options = { :body => options } if options.is_a?(String)
-
         self.commerce = options[:commerce] || TBK::Commerce.default_commerce
         self.request_ip = options[:request_ip]
         self.parse(options[:body])

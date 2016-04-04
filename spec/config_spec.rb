@@ -21,7 +21,7 @@ describe TBK::Config do
     end
 
     it "should read it's default value from the environment" do
-      ENV.should_receive(:[]).with('TBK_COMMERCE_ID').and_return "12345"
+      (expect(ENV).to receive(:[])).with('TBK_COMMERCE_ID').and_return "12345"
 
       expect(TBK.config.commerce_id).to be_eql "12345"
     end
@@ -33,7 +33,7 @@ describe TBK::Config do
     end
 
     it "should read it's default value from the environment" do
-      ENV.should_receive(:[]).with('TBK_COMMERCE_KEY').and_return "PKEY"
+      (expect(ENV).to receive(:[])).with('TBK_COMMERCE_KEY').and_return "PKEY"
 
       expect(TBK.config.commerce_key).to be_eql "PKEY"
     end
@@ -45,7 +45,7 @@ describe TBK::Config do
     end
 
     it "should read it's default value from the environment" do
-      ENV.should_receive(:[]).with('TBK_COMMERCE_ENVIRONMENT').and_return "test"
+      (expect(ENV).to receive(:[])).with('TBK_COMMERCE_ENVIRONMENT').and_return "test"
 
       expect(TBK.config.environment).to be_eql :test
     end

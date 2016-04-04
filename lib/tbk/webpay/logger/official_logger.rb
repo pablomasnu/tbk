@@ -58,12 +58,11 @@ module TBK
           end
 
           bitacora_log_file do |file|
-            file.write BITACORA_FORMAT % {'TBK_VCI' => ''}.merge(confirmation.params).merge({
+            file.write BITACORA_FORMAT % {:TBK_VCI => ''}.merge(confirmation.params).merge({
               commerce_id: confirmation.commerce.id
             })
           end
         end
-
         private
           def validate!
             unless self.directory
